@@ -1,1 +1,52 @@
-<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <link rel="stylesheet" href="styles/vendor.96921311.css"> </head> <body ng-app="bancoDeFilmesApp"> <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#!/main">Banco de Filmes</a> <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="navbar-collapse collapse" id="navbarColor01"> <ul class="navbar-nav mr-auto"> <li class="nav-item active"> <a class="nav-link" href="#!/main">Mais Populares</a> </li> </ul> <form class="form-inline"> <input id="pesquisa" class="form-control mr-2" ng-model="query" ng-model-options placeholder="Procurar..."> <button class="btn btn-primary" onclick="procurar()">Search</button> </form> </div> </nav> <div class="container"> <div ng-view=""></div> </div> <script src="scripts/vendor.d41d8cd9.js"></script> </body> </html>
+<!doctype html> <html> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <link rel="stylesheet" href="styles/vendor.96921311.css"> </head> <body ng-app="bancoDeFilmesApp"> <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="#!/main">Banco de Filmes</a> <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> <div class="navbar-collapse collapse" id="navbarColor01"> <ul class="navbar-nav mr-auto"> <li class="nav-item active"> <a class="nav-link" href="#!/main">Mais Populares</a> </li> </ul> <form class="form-inline"> <input id="pesquisa" class="form-control mr-2" ng-model="query" ng-model-options placeholder="Procurar..."> <button class="btn btn-primary" onclick="procurar()">Search</button> </form> </div> </nav> <div class="container"> <div ng-view=""></div> </div> <script src="scripts/vendor.ae0f535b.js"></script> <script src="scripts/scripts.db6bc49f.js"></script> <script>var query;
+      var tempo = 500;
+
+      function debounce(func, wait, immediate) {
+        var timeout;
+        var executedFunction
+
+        return function executedFunction() {
+          var context = this;
+          var args = arguments;
+
+          var later = function() {
+            timeout = null;
+
+            if(!immediate) {
+              func.apply(context, args);
+            }
+          };
+
+          var callNow = immediate && !timeout;
+
+          clearTimeout(timeout);
+
+          timeout = setTimeout(later, wait);
+
+          if(callNow) {
+            func.apply(context.args);
+          }
+        }
+      }
+
+      var procurar = debounce(function() {
+        if($('#pesquisa').val() !== "") {
+          query = $('#pesquisa').val();
+
+          window.location = `#!/search/${query}`;
+
+          $('#pesquisa').val("");
+        }
+      }, 500)
+
+      $('#pesquisa').keypress(function(event) {
+        var procurarEnter = debounce(function() {
+          if(event.which === 13) {
+            query = $('#pesquisa').val();
+
+            window.location = `#!/search/${query}`;
+
+            $('#pesquisa').val("");
+          }
+        })
+      })</script> </body> </html>
