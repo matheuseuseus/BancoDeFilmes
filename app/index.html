@@ -37,75 +37,14 @@
       <div ng-view=""></div>
     </div>
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- build:js(app) scripts/vendor.js -->
+    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
-
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
-
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/movie.js"></script>
-    <script src="scripts/controllers/search.js"></script>
-
-    <script>
-      var query;
-      var tempo = 500;
-
-      function debounce(func, wait, immediate) {
-        var timeout;
-        var executedFunction
-
-        return function executedFunction() {
-          var context = this;
-          var args = arguments;
-
-          var later = function() {
-            timeout = null;
-
-            if(!immediate) {
-              func.apply(context, args);
-            }
-          };
-
-          var callNow = immediate && !timeout;
-
-          clearTimeout(timeout);
-
-          timeout = setTimeout(later, wait);
-
-          if(callNow) {
-            func.apply(context.args);
-          }
-        }
-      }
-
-      var procurar = debounce(function() {
-        if($('#pesquisa').val() !== "") {
-          query = $('#pesquisa').val();
-
-          window.location = `#!/search/${query}`;
-
-          $('#pesquisa').val("");
-        }
-      }, 500)
-
-      $('#pesquisa').keypress(function(event) {
-        var procurarEnter = debounce(function() {
-          if(event.which === 13) {
-            query = $('#pesquisa').val();
-
-            window.location = `#!/search/${query}`;
-
-            $('#pesquisa').val("");
-          }
-        })
-      })
-    </script>
+    <!-- endbower -->
     <!-- endbuild -->
+
   </body>
 </html>
