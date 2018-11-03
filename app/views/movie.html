@@ -1,0 +1,32 @@
+<div class="row py-2">
+  <div class="col-md-12 py-2 card bg-light">
+      <div class="row">
+        <div class="col-md-4">
+          <img class="card-img-top" src="{{imagePath}}{{movie.poster_path}}" alt="{{movie.title}}" ng-if="movie.poster_path">
+          <img class="card-img-top" src="https://www.templaza.com/blog/components/com_easyblog/themes/wireframe/images/placeholder-image.png" alt="{{movie.title}}" ng-if="!movie.poster_path">
+          <div class="row">
+            <div class="col-md-12 py-2">
+              <h5 class="card-title text-center">{{movie.title}} | <span ng-class="{'text-success': movie.vote_average >= 7, 'text-warning': movie.vote_average < 7 && movie.vote_average >= 6, 'text-danger': movie.vote_average < 6}" ng-if="movie.status === 'Released'">{{movie.vote_average}}</span>
+                                                                   <span ng-if="movie.status !== 'Released'">{{movie.status}}</span></h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 py-2">
+          <p class="card-body" ng-if="movie.overview">{{movie.overview}}</p>
+          <p class="card-body" ng-if="!movie.overview">Não há descrição para este filme.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Gêneros: <span ng-repeat="genre in movie.genres">{{$last === true ? genre.name : genre.name + ", "}}</span>
+            </li>
+            <li class="list-group-item" ng-if="movie.release_date">Data de Lançamento: {{movie.release_date | date: 'dd/MM/yyyy'}}</li>
+            <li class="list-group-item" ng-if="movie.homepage"><a href="{{movie.homepage}}">{{movie.homepage}}</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary" ng-click="goBack()">Voltar</button>
+  </div>
+</div>

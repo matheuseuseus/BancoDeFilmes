@@ -1,0 +1,13 @@
+<div class="row grid">
+  <div class="col-md-4 col-sm-6 col-xs-12 py-2 grid-item" ng-repeat="movie in movieList">
+    <div class="card h-100">
+      <img class="card-img-top lazy" src="{{imagePath}}{{movie.poster_path}}" alt="{{movie.title}}">
+      <div class="card-body d-flex flex-column">
+        <div class="h-100">
+          <!--<h5 class="card-title">{{movie.title}}</h5>-->
+        </div>
+        <a href="#!/movie/{{movie.id}}" class="btn btn-primary btn-sm mt-auto">Ver Informações</a>
+      </div>
+    </div>
+  </div>
+</div>
