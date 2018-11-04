@@ -9,5 +9,12 @@
     "angular-mocks": "^1.4.0"
   },
   "appPath": "app",
-  "moduleName": "bancoDeFilmesApp"
+  "moduleName": "bancoDeFilmesApp",
+  "overrides": {
+    "jquery": {
+      "main": [
+        "dist/jquery.min.js"
+      ]
+    }
+  }
 }
