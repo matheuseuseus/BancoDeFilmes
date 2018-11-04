@@ -26,11 +26,11 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
-    <button class="btn btn-primary" ng-click="goBack()">Voltar</button>
-  </div>
-  <div class="col-md-6">
-    <button class="btn btn-primary float-right disabled" ng-click="favorito()" ng-if="exists.length > 0" disabled>Favoritado</button>
-    <button class="btn btn-primary float-right" ng-click="favorito()" ng-if="exists.length === 0">Favorito</button>
-  </div>
+    <div class="col align-self-start">
+      <button class="btn btn-primary" ng-click="goBack()">Voltar</button>
+    </div>
+    <div class="col align-self-end">
+      <button class="btn btn-primary disabled float-right" ng-click="favorito()" ng-if="exists.length > 0" disabled>Favoritado</button>
+      <button class="btn btn-primary float-right" ng-click="favorito()" ng-if="exists.length === 0">Favorito</button>
+    </div>
 </div>
