@@ -1,8 +1,8 @@
 {
     "name": "Banco de Filmes",
-    "short_name": "BanFil",
-    "lang": "pt-BR",
-    "start_url": "/",
+    "short_name": "BF",
+    "start_url": "/#!",
+    "scope": "./",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,7 +15,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#f8f9fa",
+    "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"
 }
