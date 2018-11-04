@@ -6,9 +6,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- build:css(.) styles/vendor.css -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
   
   </head>
 
@@ -36,6 +37,8 @@
       <div ng-view=""></div>
     </div>
 
+    <script src="scripts/jquery.min.js"></script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -43,17 +46,14 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
-
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/bootstrap.min.js"></script>
 
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/movie.js"></script>
     <script src="scripts/controllers/search.js"></script>
+    <!-- endbuild -->
 
     <script>
       var query;
@@ -109,6 +109,5 @@
         })
       })
     </script>
-    <!-- endbuild -->
   </body>
 </html>
