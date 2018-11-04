@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Banco de Filmes</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
@@ -29,6 +29,9 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#!/main">Mais Populares</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#!/favorites">Favoritos</a>
           </li>
         </ul>
         <form class="form-inline">
@@ -65,12 +68,16 @@
     <!-- endbuild -->
 
     <script src="scripts/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="scripts/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/movie.js"></script>
     <script src="scripts/controllers/search.js"></script>
+    <script src="scripts/controllers/favorites.js"></script>
     <!-- endbuild -->
 
     <script>

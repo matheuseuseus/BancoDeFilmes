@@ -1,7 +1,7 @@
 <div class="row grid">
   <div class="col-md-4 col-sm-6 col-xs-12 py-2 grid-item" ng-repeat="movie in movieSearch">
     <div class="card h-100">
-      <img class="card-img-top" src="{{imagePath}}{{movie.poster_path}}" alt="{{movie.title}}" ng-if="movie.poster_path">
+      <img class="card-img-top" ng-src="{{imagePath}}{{movie.poster_path}}" alt="{{movie.title}}" ng-if="movie.poster_path">
       <div ng-if="!movie.poster_path">
         <span class="text-center">{{movie.title}} (Não há imagem para este filme)</span>
         <img class="card-img-top" src="https://www.templaza.com/blog/components/com_easyblog/themes/wireframe/images/placeholder-image.png" alt="{{movie.title}}">

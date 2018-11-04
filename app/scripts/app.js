@@ -10,7 +10,8 @@
  */
 angular
   .module('bancoDeFilmesApp', [
-    'ngRoute'
+    'ngRoute',
+    'firebase'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -28,6 +29,11 @@ angular
         templateUrl: 'views/search.html',
         controller: 'SearchCtrl',
         controllerAs: 'search'
+      })
+      .when('/favorites', {
+        templateUrl: 'views/favorites.html',
+        controller: 'FavoritesCtrl',
+        controllerAs: 'favorites'
       })
       .otherwise({
         redirectTo: '/'
